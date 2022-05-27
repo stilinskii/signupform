@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="js/background.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="/js/signUp.js"></script>
+    <script defer src="/js/welcome.js"></script>
+    <script defer src="https://kit.fontawesome.com/661f25159f.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 id="title">METFLIX</h2>
+
+    <div class="main">
+      <section class="signUpSection">
+        <div class="desc">
+          <h1>Unlimited movies, TV shows, and more.</h1>
+          <h2>Watch anywhere. Cancel anytime.</h2>
+          <h3>
+            Ready to watch? Enter your email to create <br />or restart your
+            membership.
+          </h3>
+        </div>
+        <!-- 회원가입 폼-->
+        <form class="signUpForm">
+          <!-- 이메일입력 -->
+          <div
+            class="form-floating mb-3"
+            id="signup-info"
+            value="test@example.com"
+          >
+            <input
+              required
+              type="email"
+              class="form-control"
+              id="floatingInput"
+              placeholder="name@example.com"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            />
+            <label for="floatingInput">Email address</label>
+          </div>
+          <!-- 비밀번호입력 -->
+          <div class="form-floating" id="signup-info">
+            <input
+              required
+              type="password"
+              class="form-control"
+              id="floatingPassword"
+              placeholder="Password"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+            />
+            <label for="floatingPassword">Password</label>
+          </div>
+          <!-- 비밀번호 확인 -->
+          <div class="form-floating" id="signup-info">
+            <input
+              required
+              type="password"
+              class="form-control"
+              id="floatingPassword"
+              placeholder="Password"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            />
+            <label for="floatingPassword">Password Validation</label>
+          </div>
+          <button id="signUpBtn" type="submit" class="btn btn-danger">
+            Get Started
+          </button>
+        </form>
+      </section>
+    </div>
+
+    <!-- 추가정보 입력 -->
+    <div class="sub hidden">
+      <section class="extraInfoSection">
+        <h1>Finish setting up your account</h1>
+        <h2>
+          Metflix is personalized for you.<br />
+          Let us know more about you for better recommendations.
+        </h2>
+        <form class="extraInfoForm">
+          <!-- 사용자 이름 -->
+          <div class="form-floating" id="extraInfo">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingUsername"
+              placeholder="Username"
+              maxlength=15
+
+            />
+            <label for="floatingPassword">Username</label>
+          </div>
+
+          <!-- 선호장르선택 -->
+          <h4>Genre preferences</h4>
+          <section class="genre">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inlineCheckbox1"
+                value="option1"
+              />
+              <label class="form-check-label" for="inlineCheckbox1"
+                >Action & Adventure</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inlineCheckbox2"
+                value="option2"
+              />
+              <label class="form-check-label" for="inlineCheckbox2"
+                >Anime</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inlineCheckbox3"
+                value="option2"
+              />
+              <label class="form-check-label" for="inlineCheckbox3"
+                >Children & Family</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inlineCheckbox4"
+                value="option2"
+              />
+              <label class="form-check-label" for="inlineCheckbox4"
+                >Classic</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inlineCheckbox5"
+                value="option2"
+              />
+              <label class="form-check-label" for="inlineCheckbox5"
+                >Comedies</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inlineCheckbox6"
+                value="option2"
+              />
+              <label class="form-check-label" for="inlineCheckbox6"
+                >Documentaries</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inlineCheckbox7"
+                value="option2"
+              />
+              <label class="form-check-label" for="inlineCheckbox7"
+                >Dramas</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="inlineCheckbox8"
+                value="option2"
+              />
+              <label class="form-check-label" for="inlineCheckbox8"
+                >Horror</label
+              >
+            </div>
+          </section>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="chkAll" />
+            <label class="form-check-label" for="chkAll">Check all</label>
+          </div>
+          <br />
+          <button
+            title="You can skip."
+            id="extraBtn"
+            type="submit"
+            class="btn btn-danger"
+          >
+            Done
+          </button>
+        </form>
+      </section>
+    </div>
+
+
+    </div>
+
+    <section class="welcome hidden">
+      <i class="fa fa-sign-out"></i>
+      
+    </section>
+
+
+  </body>
+</html>
