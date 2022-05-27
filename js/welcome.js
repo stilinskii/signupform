@@ -6,7 +6,7 @@ const welcomePage = document.querySelector('.welcome');
 //오타방지
 const USERNAME_KEY = 'username';
 
-//유저네임 입력시 이름 로컬저장소에 저장, 미입력시 랜덤숫자 저장
+//유저네임 입력시 이름 로컬저장소에 저장, 미입력시 랜덤숫자를 유저네임으로 저장
 function saveUsername() {
   const userName = document.querySelector('#floatingUsername');
   if (userName.value === '') {
@@ -16,7 +16,8 @@ function saveUsername() {
   }
 }
 const welcomeMsg = document.createElement('h1');
-//회원가입 완료 페이지 프린트
+
+//웰컴 페이지 프린트
 function printWelcom() {
   const subPage = document.querySelector('.sub');
   subPage.classList.add(HIDDEN_CLASS);
@@ -29,9 +30,10 @@ function printWelcom() {
 //prevent submit
 function handleExtraInfoFormSubmit(event) {
   event.preventDefault();
-
   saveUsername();
   printWelcom();
+  location.reload();
+  //페이지 새로고침(가입 완료와 동시에 배경사진 바뀌게 하고싶음)
 }
 extraInfoForm.addEventListener('submit', handleExtraInfoFormSubmit);
 
@@ -48,12 +50,12 @@ function handledeleteAcount() {
   localStorage.removeItem(USERNAME_KEY);
   welcomePage.classList.add(HIDDEN_CLASS);
   signUpPage.classList.remove(HIDDEN_CLASS);
-  // welcomePage.removeChild();
+  location.reload();
 }
 
 deleteBtn.addEventListener('click', handledeleteAcount);
 
-//저장소에 이미 가입한 기록 있으면 웰컴페이지, 아니면 회원가입 페이지 출력
+//로컬저장소에 이미 가입한 기록 있으면 웰컴페이지, 아니면 회원가입 페이지 출력
 if (localStorage.getItem(USERNAME_KEY)) {
   printWelcom();
 }
