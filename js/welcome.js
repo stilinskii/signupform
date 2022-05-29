@@ -15,10 +15,10 @@ function saveUsername() {
     localStorage.setItem(USERNAME_KEY, userName.value);
   }
 }
-const welcomeMsg = document.createElement('h1');
 
 //웰컴 페이지 프린트
 function printWelcom() {
+  const welcomeMsg = document.createElement('h1');
   const subPage = document.querySelector('.sub');
   subPage.classList.add(HIDDEN_CLASS);
   signUpPage.classList.add(HIDDEN_CLASS);
@@ -28,12 +28,9 @@ function printWelcom() {
 }
 
 //prevent submit
-function handleExtraInfoFormSubmit(event) {
-  event.preventDefault();
+function handleExtraInfoFormSubmit() {
   saveUsername();
   printWelcom();
-  location.reload();
-  //페이지 새로고침(가입 완료와 동시에 배경사진 바뀌게 하고싶음)
 }
 extraInfoForm.addEventListener('submit', handleExtraInfoFormSubmit);
 

@@ -13,4 +13,5 @@ console.log(chosenImage);
 
 const bgImage = document.createElement('img'); //<img>
 bgImage.src = `img/${chosenImage}`; //<img>에 소스넣기
-document.body.appendChild(bgImage); // 그대로 바디에 붙이기
+// document.body.appendChild(bgImage); // 그대로 바디에 붙이기
+document.body.prepend(bgImage); //앞에 붙여야 사진이 좀 더 빨리 로딩됨.
